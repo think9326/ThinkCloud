@@ -1,0 +1,84 @@
+<template>
+    <div class="login-container">
+        <div class="left-container">
+            <v-img class="login-introduce-img" src="../assets/images/img04.jpg" cover></v-img>
+        </div>
+        <div class="right-container">
+            <div class="login-box">
+                <v-card>
+                    <v-tabs v-model="tab" bg-color="primary">
+                        <v-tab value="one">Item One</v-tab>
+                        <v-tab value="two">Item Two</v-tab>
+                        <v-tab value="three">Item Three</v-tab>
+                    </v-tabs>
+
+                    <v-card-text>
+                        <v-window v-model="tab">
+                            <v-window-item value="one">
+                                One
+                            </v-window-item>
+
+                            <v-window-item value="two">
+                                Two
+                            </v-window-item>
+
+                            <v-window-item value="three">
+                                Three
+                            </v-window-item>
+                        </v-window>
+                    </v-card-text>
+                </v-card>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data: () => ({
+        tab: null,
+    }),
+}
+</script>
+
+<style>
+.login-container {
+    height: 100%;
+    display: flex;
+}
+
+.left-container {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-introduce-img {
+    width: 100%;
+    /* 图片宽度100% */
+    height: 100%;
+    /* 图片高度100% */
+    object-fit: cover;
+    /* 保持图片比例并填满容器 */
+    object-position: center;
+    /* 图片居中显示 */
+}
+
+.right-container {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-box {
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
+    /* 水平居中 */
+    height: 100vh;
+    /* 设置容器高度为视窗高度，可以根据需要调整 */
+}
+</style>
